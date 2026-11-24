@@ -1,1 +1,42 @@
-        <!-- Write your code here -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #body {
+        display: flex;
+      }
+      .box {
+        height: 100px;
+        width: 100px;
+        border-radius: 5%;
+      }
+      #container {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="btn">Add box</button>
+      <div id="container"></div>
+    </div>
+    <script>
+      let btn = document.getElementById("btn");
+      btn.addEventListener("click", () => {
+        let para = document.createElement("div");
+        para.classList.add("box");
+        para.style.backgroundColor = "red";
+        para.textContent = "click to remove";
+        para.addEventListener("click", () => {
+          para.remove();
+        });
+        let container = document.getElementById("container");
+        container.appendChild(para);
+      });
+    </script>
+  </body>
+</html>
